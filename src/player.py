@@ -1,5 +1,7 @@
 from config import BOARD_SIZE, categories, image_size
 from tensorflow.keras import models
+from models.basic_model import BasicModel
+from models.model import Model
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
@@ -101,10 +103,10 @@ class UserWebcamPlayer:
         # img an np array of size NxN (square), each pixel is a value between 0 to 255
         # you have to resize this to image_size before sending to your model
         # to show the image here, you can use:
-        #self.model = models.load_model("basic_model_10_epochs_timestamp_1708317458.keras")
-        print("AHHHHHH")
         plt.imshow(img, cmap='gray', vmin=0, vmax=255)
         plt.show()
+        model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708317458.keras")
+        model.print_summary()      
         
         # You have to use your saved model, use resized img as input, and get one classification value out of it
         # The classification value should be 0, 1, or 2 for neutral, happy or surprise respectively
