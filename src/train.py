@@ -6,7 +6,7 @@ from config import image_size
 import matplotlib.pyplot as plt
 import time
 
-input_shape = (image_size[0], image_size[1], 3)
+input_shape = (image_size[0], image_size[1], 3)#(None,150,150,1)  (None,150,1,1)
 categories_count = 3
 
 models = {
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # plot_history(history)
     # 
     # Your code should change the number of epochs
-    epochs = 10
+    epochs = 30
     print('* Data preprocessing')
     train_dataset, validation_dataset, test_dataset = get_datasets()
     name = 'basic_model'
