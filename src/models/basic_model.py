@@ -11,14 +11,16 @@ class BasicModel(Model):
         [
             layers.Input(shape=input_shape),
             Rescaling(1./255),
-            layers.Conv2D(32, kernel_size=(3, 3), activation="relu",input_shape=input_shape),
+            layers.Conv2D(8, kernel_size=(3, 3), activation="relu",input_shape=input_shape),
+            layers.MaxPooling2D(pool_size=(2, 2)),
+            layers.Conv2D(64, kernel_size=(3, 3), activation="relu",input_shape=input_shape),
             layers.MaxPooling2D(pool_size=(2, 2)),
             layers.Conv2D(64, kernel_size=(3, 3), activation="relu",input_shape=input_shape),
             layers.MaxPooling2D(pool_size=(2, 2)),
             layers.Conv2D(64, kernel_size=(3, 3), activation="relu",input_shape=input_shape),
             layers.MaxPooling2D(pool_size=(2, 2)),
             layers.Flatten(),
-            #layers.Dense(3, activation='relu'),
+            #layers.Dense(5, activation='relu'),
             layers.Dense(categories_count, activation="softmax"),
         ]
     )
