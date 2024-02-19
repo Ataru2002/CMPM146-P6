@@ -19,8 +19,10 @@ class BasicModel(Model):
             layers.MaxPooling2D(pool_size=(2, 2)),
             layers.Conv2D(64, kernel_size=(3, 3), activation="relu",input_shape=input_shape),
             layers.MaxPooling2D(pool_size=(2, 2)),
+            #layers.Dropout(0),
             layers.Flatten(),
-            #layers.Dense(5, activation='relu'),
+            layers.Dropout(0.5),
+            #layers.Dense(16, activation='relu'),
             layers.Dense(categories_count, activation="softmax"),
         ]
     )
