@@ -6,6 +6,7 @@ import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
+
 class TicTacToePlayer:
     def get_move(self, board_state):
         raise NotImplementedError()
@@ -105,9 +106,14 @@ class UserWebcamPlayer:
         # to show the image here, you can use:
         plt.imshow(img, cmap='gray', vmin=0, vmax=255)
         plt.show()
-        model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708317458.keras")
-        model.print_summary()      
+        model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708321651.keras")
+        model.print_summary()
+        resized_image = np.resize(img, (image_size[0], image_size[1]))
+        #resized_image = resized_image/255.0
         
+        reshaped = np.reshape(resized_image, (image_size[0], image_size[1],1))
+        model.model.predict(reshaped)
+ 
         # You have to use your saved model, use resized img as input, and get one classification value out of it
         # The classification value should be 0, 1, or 2 for neutral, happy or surprise respectively
 
