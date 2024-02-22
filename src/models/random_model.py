@@ -9,7 +9,7 @@ class RandomModel(Model):
         # Your code goes here
         # you have to initialize self.model to a keras model
         #load model
-        self.model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708513000.keras").model
+        self.model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708596083.keras").model
 
         
         # very similar to transfered_model.py, the only difference is that you should randomize the weights

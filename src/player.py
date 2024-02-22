@@ -106,7 +106,7 @@ class UserWebcamPlayer:
         # to show the image here, you can use:
         plt.imshow(img, cmap='gray', vmin=0, vmax=255)
         plt.show()
-        model = Model.load_model("./results/basic_model_30_epochs_timestamp_1708328218.keras")
+        model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708596083.keras")
         #model.print_summary()
         resized_image = np.resize(img, (image_size[0], image_size[1], 3)).reshape(150, 150, 3)
         resized_image = np.expand_dims(resized_image, axis=0)

@@ -8,37 +8,25 @@ class BasicModel(Model):
         # Your code goes here
         # you have to initialize self.model to a keras model
         self.model = Sequential(
-        [
-            layers.Input(shape=input_shape),
-            Rescaling(1./255),
-            layers.Conv2D(8, kernel_size=(3, 3), input_shape=input_shape, activation="relu"),
-            layers.MaxPooling2D(pool_size=(2, 2)),
-            layers.Conv2D(64, kernel_size=(3, 3), input_shape=input_shape,activation="relu"),
-            layers.MaxPooling2D(pool_size=(2, 2)),
-            layers.Conv2D(64, kernel_size=(3, 3), input_shape=input_shape, activation="relu"),
-            layers.MaxPooling2D(pool_size=(2, 2)),
-            layers.Conv2D(64, kernel_size=(3, 3), input_shape=input_shape, activation="relu"),
-            layers.MaxPooling2D(pool_size=(2, 2)),
-            #layers.Dropout(0),
-            layers.Flatten(),
-            layers.Dropout(0.5),
-            #layers.Dense(16, activation='relu'),
-            layers.Dense(categories_count, activation="softmax"),
-        ]
-    )
-        # input = layers.Input(shape=input_shape)
-        # x = layers.Conv2D(32, (3, 3), activation='relu')(input)
-        # x = layers.MaxPooling2D(pool_size=(2, 2))(x)
-
-        # x = layers.Conv2D(64, (3, 3), activation='relu')(x)
-        # x = layers.MaxPooling2D(pool_size=(2, 2))(x)
-
-        # x = layers.Conv2D(128, (3, 3), activation='relu')(x)
-        # x = layers.MaxPooling2D(pool_size=(2, 2))(x)
-
-        # x = layers.Flatten()(x)
-        # x = layers.Dense(128, activation='relu')(x)
-        # output_layer = layers.Dense(categories_count, activation='softmax')(x)
+            [
+                layers.Input(shape=input_shape),
+                Rescaling(1./255),
+                layers.Conv2D(8, kernel_size=(3, 3), input_shape=input_shape, activation="relu"),
+                layers.MaxPooling2D(pool_size=(2, 2)),
+                layers.Conv2D(64, kernel_size=(3, 3), input_shape=input_shape,activation="relu"),
+                layers.MaxPooling2D(pool_size=(2, 2)),
+                layers.Conv2D(64, kernel_size=(3, 3), input_shape=input_shape, activation="relu"),
+                layers.MaxPooling2D(pool_size=(2, 2)),
+                layers.Conv2D(64, kernel_size=(3, 3), input_shape=input_shape, activation="relu"),
+                layers.MaxPooling2D(pool_size=(2, 2)),
+                #layers.Dropout(0),
+                layers.Flatten(),
+                layers.Dropout(0.5),
+                #layers.Dense(16, activation='relu'),
+                layers.Dense(categories_count, activation="softmax"),
+            ]
+        )
+        
 
 
     

@@ -13,7 +13,7 @@ class TransferedModel(Model):
         # use this model by removing the last layer, adding dense layers and an output layer
 
         #load model
-        self.model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708513000.keras").model
+        self.model = Model.load_model("./results/basic_model_10_epochs_timestamp_1708596083.keras").model
         #eliminate the last layer (softmax layer)
         self.model.pop()
 
@@ -26,7 +26,6 @@ class TransferedModel(Model):
         output_layer = layers.Dense(categories_count, activation='softmax')
         self.model.add(dense_layer)
         self.model.add(output_layer)
-        print(self.model.layers)
     
     def _compile_model(self):
         # Your code goes here
