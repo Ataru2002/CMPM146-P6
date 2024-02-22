@@ -36,4 +36,4 @@ class TransferedModel(Model):
             loss = 'categorical_crossentropy',
             metrics = ['accuracy'],
         )
-        pass
+

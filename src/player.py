@@ -110,7 +110,7 @@ class UserWebcamPlayer:
         #model.print_summary()
         resized_image = np.resize(img, (image_size[0], image_size[1], 3)).reshape(150, 150, 3)
         resized_image = np.expand_dims(resized_image, axis=0)
-        print(resized_image.shape)
+
         predictions = model.model.predict(resized_image)
 
         # You have to use your saved model, use resized img as input, and get one classification value out of it
@@ -120,8 +120,9 @@ class UserWebcamPlayer:
         
         print(predictions[0])
         print(np.argmax(predictions[0]))
+        print(int(np.argmax(predictions)))
         
-        return int(np.argmax(predictions[0]))
+        return int(np.argmax(predictions))
     
     def get_move(self, board_state):
         row, col = None, None
